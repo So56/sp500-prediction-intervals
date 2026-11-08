@@ -1,0 +1,17 @@
+model,method,target_reached_in_both_regimes
+ar1,fixed_cp,False
+ar1,fixed_normal,False
+ar1,rolling_cp,False
+ar1,rolling_normal,False
+historical_mean,fixed_cp,False
+historical_mean,fixed_normal,False
+historical_mean,rolling_cp,False
+historical_mean,rolling_normal,False
+multiple_regression,fixed_cp,False
+multiple_regression,fixed_normal,False
+multiple_regression,rolling_cp,False
+multiple_regression,rolling_normal,False
+random_walk,fixed_cp,False
+random_walk,fixed_normal,False
+random_walk,rolling_cp,False
+random_walk,rolling_normal,False

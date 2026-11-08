@@ -1,0 +1,3378 @@
+{
+  "status": "passed",
+  "check_count": 672,
+  "checks": [
+    {
+      "name": "baseline preserved: README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: requirements.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: research_design.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: .gitignore",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/05_make_figures.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/intervals.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/run_all.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/02_fit_models.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/04_evaluate.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/01_prepare_data.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/03_build_intervals.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: Scripts/settings.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: reports/split_summary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: reports/initial_results.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/verify_analysis.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/source_hashes_before.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/source_preservation.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/verification.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/evaluation/point_summary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/evaluation/interval_summary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/evaluation/daily_evaluation.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/evaluation/annual_summary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/figures/nine_combinations.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/figures/point_accuracy.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/figures/nine_combinations.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/figures/ar1_width_and_coverage.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/figures/point_accuracy.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/figures/ar1_width_and_coverage.pdf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/modeling/interval_settings.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/modeling/prediction_intervals.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/modeling/model_coefficients.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: outputs/modeling/point_predictions.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: data/raw/VIXCLS.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: data/raw/SP500.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: data/processed/analysis_dataset.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/reference/group_summary.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/reference/ols_coefficients.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/reference/prediction_intervals.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "baseline preserved: validation/reference/analysis_dataset.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "raw bytes unchanged: SP500.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "raw bytes unchanged: VIXCLS.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original dataset columns",
+      "passed": true,
+      "detail": "2469 rows; atol=rtol=1e-10"
+    },
+    {
+      "name": "original split summary",
+      "passed": true,
+      "detail": "3 rows; atol=rtol=1e-10"
+    },
+    {
+      "name": "original point predictions",
+      "passed": true,
+      "detail": "5901 rows; atol=rtol=1e-10"
+    },
+    {
+      "name": "original nine daily intervals",
+      "passed": true,
+      "detail": "15435 rows; atol=rtol=1e-10"
+    },
+    {
+      "name": "original nine interval summaries",
+      "passed": true,
+      "detail": "27 rows; atol=rtol=1e-10"
+    },
+    {
+      "name": "original point summaries",
+      "passed": true,
+      "detail": "9 rows; atol=rtol=1e-10"
+    },
+    {
+      "name": "all lagged return features use t-1 or earlier",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "lagged VIX and regime",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all predictors complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "predictions have one row per model/date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "intervals have one row per combination/date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "1715 common test dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all interval bounds finite and ordered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "interval centers equal point predictions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple regression uses training coefficients",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "training design full rank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple predictions use frozen coefficients",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/rolling_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/rolling_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/rolling_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/rolling_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_cp constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_cp first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_normal constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk/fixed_normal first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk rolling histories match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk all rolling CP widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk all rolling Normal widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk rolling dates and count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk future-error invariance CP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_walk future-error invariance Normal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/rolling_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/rolling_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/rolling_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/rolling_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_cp constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_cp first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_normal constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean/fixed_normal first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean rolling histories match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean all rolling CP widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean all rolling Normal widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean rolling dates and count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean future-error invariance CP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_mean future-error invariance Normal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/rolling_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/rolling_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/rolling_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/rolling_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_cp constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_cp first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_normal constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1/fixed_normal first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1 rolling histories match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1 all rolling CP widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1 all rolling Normal widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1 rolling dates and count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1 future-error invariance CP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ar1 future-error invariance Normal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/rolling_cp common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/rolling_cp past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/rolling_normal common dates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/rolling_normal past history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_cp constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_cp first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_normal constant halfwidth",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression/fixed_normal first-day equality",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression rolling histories match",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression all rolling CP widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression all rolling Normal widths",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression rolling dates and count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression future-error invariance CP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "multiple_regression future-error invariance Normal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "interval score anchor examples",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "conformal finite sample rank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "conformal unattainable finite rank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "summary row counts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "point summaries do not duplicate interval methods",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "90 percent target rule",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "overall/all_candidates candidate count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "overall/all_candidates minimum IS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "overall/target_reached_only candidate count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "overall/target_reached_only minimum IS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "high_vix/all_candidates candidate count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "high_vix/all_candidates minimum IS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "high_vix/target_reached_only candidate count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "high_vix no eligible candidate",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "non_high_vix/all_candidates candidate count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "non_high_vix/all_candidates minimum IS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "non_high_vix/target_reached_only candidate count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "non_high_vix/target_reached_only minimum IS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap paired direct calculation overall",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap paired direct calculation high_vix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap paired direct calculation non_high_vix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "empty bootstrap regime remains undefined",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap input digest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/overall/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/high_vix/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 10/non_high_vix/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/overall/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/high_vix/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 5/non_high_vix/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/overall/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/high_vix/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/none/mae",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/none/rmse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/fixed_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/rolling_cp/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/fixed_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/rolling_normal/coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/fixed_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/rolling_cp/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/fixed_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/rolling_normal/width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/random_walk/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/historical_mean/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/ar1/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/fixed_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/rolling_cp/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/fixed_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap estimate 20/non_high_vix/multiple_regression/rolling_normal/interval_score",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (10, 0)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (10, 1)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (10, 2)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap all index digest 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no bootstrap regimes lost 10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (5, 0)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (5, 1)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (5, 2)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap all index digest 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no bootstrap regimes lost 5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (20, 0)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (20, 1)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap index prefix (20, 2)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bootstrap all index digest 20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no bootstrap regimes lost 20",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "baseline_archive_sha256": "917edf2fe628fc05297668ddadae603a45a5122f4813be06ba2b60c427de65d4",
+  "raw_sha256": {
+    "SP500.csv": "49faa5a4f87574084a5e525e44013bad74e831947c2cc98b8031e87508d0d6b9",
+    "VIXCLS.csv": "b70f9750ac54ea6e89348b89f06178b9c053ed4238f808f6ca22d175a19cb5c6"
+  },
+  "runtime": {
+    "python": "3.13.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8"
+  },
+  "interpretation": "Numerical and timing checks only; does not establish coverage guarantees or bootstrap validity under nonstationarity."
+}

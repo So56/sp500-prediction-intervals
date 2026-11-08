@@ -1,0 +1,7 @@
+group,scope,candidate_n,model,method,coverage,width,interval_score,status
+overall,all_candidates,16,random_walk,rolling_cp,0.9032069970845481,3.701477136700592,5.921426377218444,observed_minimum
+overall,target_reached_only,6,random_walk,rolling_cp,0.9032069970845481,3.701477136700592,5.921426377218444,observed_minimum
+high_vix,all_candidates,16,ar1,rolling_normal,0.6845637583892618,5.096894130639211,17.748679901659443,observed_minimum
+high_vix,target_reached_only,0,,,,,,no_candidate_reached_target
+non_high_vix,all_candidates,16,random_walk,fixed_normal,0.8492975734355045,2.586588860810317,4.4686767463235935,observed_minimum
+non_high_vix,target_reached_only,8,random_walk,rolling_cp,0.9265644955300127,3.6196444209240948,4.632523319380296,observed_minimum

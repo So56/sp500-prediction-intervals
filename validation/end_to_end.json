@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "clean_run_without_previous_outputs": true,
+  "identical_csv_outputs": [
+    "evaluation/point_summary.csv",
+    "evaluation/selection_summary.csv",
+    "evaluation/regime_target_status.csv",
+    "evaluation/interval_summary.csv",
+    "evaluation/daily_evaluation.csv",
+    "evaluation/annual_summary.csv",
+    "modeling/interval_settings.csv",
+    "modeling/prediction_intervals.csv",
+    "modeling/model_coefficients.csv",
+    "modeling/training_feature_correlations.csv",
+    "modeling/point_predictions.csv",
+    "modeling/training_feature_summary.csv",
+    "evaluation/bootstrap/paired_differences.csv",
+    "evaluation/bootstrap/metric_intervals.csv"
+  ]
+}
