@@ -1,20 +1,20 @@
-# 重回帰の説明変数
+# Predictors for Multiple Regression
 
-予測日をtとし、前営業日の引け後に既知の情報だけを使う。
-目的変数は `return_pct = 100 × log(P_t / P_(t-1))`。
+Let t denote the forecast date. Only information available after the close of the previous trading day is used.
+The target variable is `return_pct = 100 × log(P_t / P_(t-1))`.
 
-| CSV列 | 定義 | 作り方 | 意図 |
+| CSV column | Definition | Calculation | Purpose |
 | --- | --- | --- | --- |
-| return_lag1_pct | r_(t-1) | return_pct.shift(1) | 直近1日の連続性・反転 |
-| return_5d_lag1_pct | r_(t-5)+...+r_(t-1) | return_pct.shift(1).rolling(5).sum() | 数日間の値動き |
-| volatility_20d_lag1 | r_(t-20)〜r_(t-1)の標本標準偏差 | return_pct.shift(1).rolling(20).std(ddof=1) | 最近の実現した値動きの大きさ |
-| vix_lag1 | VIX_(t-1) | vix_close.shift(1) | オプション市場に基づく不確実性の指標 |
+| return_lag1_pct | r_(t-1) | return_pct.shift(1) | Capture persistence or reversal in the previous day's return |
+| return_5d_lag1_pct | r_(t-5)+...+r_(t-1) | return_pct.shift(1).rolling(5).sum() | Capture price movements over several days |
+| volatility_20d_lag1 | Sample standard deviation of r_(t-20) through r_(t-1) | return_pct.shift(1).rolling(20).std(ddof=1) | Measure the magnitude of recent realized price movements |
+| vix_lag1 | VIX_(t-1) | vix_close.shift(1) | Add a measure of uncertainty derived from the options market |
 
-移動集計はTrainingに分ける前に、過去の生データ上で作る。2017年初のTrainingには2016年の過去データも使って集計するが、係数推定の目的変数は2017–2018年だけを使う。
-5日累積は日次対数リターンの和であり、単純リターンの和ではない。20日標準偏差は日次リターンの単位のままで、年率化しない。
-5日・20日は事前の初期設定であり、最適だと主張しない。
+Rolling features are calculated from the historical raw data before the training split is applied. Features for the first training observations in 2017 use historical data from 2016, but only target observations from 2017–2018 are used to estimate the coefficients.
+The five-day cumulative return is the sum of daily log returns, rather than simple returns. The 20-day standard deviation retains the units of daily returns and is not annualized.
+The 5-day and 20-day windows are prespecified initial choices; no claim is made that they are optimal.
 
-切片を含む通常のOLSをTrainingだけで推定し、CalibrationとTestでは同じ係数を使う。特徴量は標準化せずに使用する。係数は単位が異なるので、大きさだけで重要度を比較しない。
-前日リターンと5日累積、VIXと実現ボラティリティには相関があり得る。Trainingの相関と要約統計をoutputs/modelingに保存する。
-VIXと実現ボラティリティは値動きの大きさに関わる情報で、平均リターンの予測を改善するとは限らない。
-この重回帰の追加は、同じOLSで利用情報を増やす価値を調べる比較とする。個々の係数を因果効果と解釈しない。
+The model is fitted by ordinary least squares (OLS), with an intercept, using the training data only. The same coefficients are used for calibration and testing. Features are used without standardization. Because the predictors have different units, coefficient magnitudes alone should not be used to compare their importance.
+The previous day's return may be correlated with the five-day cumulative return, and VIX may be correlated with realized volatility. Training correlations and summary statistics are saved in `outputs/modeling`.
+VIX and realized volatility provide information about the magnitude of price movements, but may not improve forecasts of mean returns.
+Adding multiple regression allows us to assess the value of using more information within the same OLS framework. Individual coefficients are not interpreted as causal effects.

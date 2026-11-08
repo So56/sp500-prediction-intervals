@@ -118,4 +118,4 @@ The verification script targets the default experiment. If you change the dates,
 The results are exploratory because part of the test period had already been examined. The usual split-conformal guarantee is marginal and relies on exchangeability, which may be difficult to justify in financial time series with serial dependence and changing volatility. The normal approximation omits uncertainty in the fitted coefficients. The bootstrap uses saved results with the fitted models held fixed, and its confidence intervals can be sensitive to block length and the small number of high-volatility episodes.
 
 The 2019 calibration period contained no high-VIX days. Future work will compare several forecast start dates while keeping training and calibration window lengths fixed. It will examine how the share and recency of high-VIX days in those windows relate to subsequent forecast performance, and how performance changes with the rolling window length.
-# sp500-prediction-intervals
+

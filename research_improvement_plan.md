@@ -1,216 +1,216 @@
-# 研究改善計画 v0.2
+# Research Improvement Plan v0.2
 
-作成日：2026年11月6日  
-対象：市場のボラティリティに応じた予測モデルと予測区間構築法の比較  
-状態：計画のみ。分析コードの変更、モデルの推定、新しい区間の計算、Bootstrapは未実行。
+Created: November 6, 2026\
+Topic: Comparing forecasting models and prediction interval methods across market volatility regimes\
+Status: Planning only. No analysis code has been changed, models fitted, new intervals calculated, or bootstrap analysis performed as part of this plan.
 
-## 1. 今回の変更と目的
+## 1. Proposed Changes and Objectives
 
-次の3点を実施する計画とする。
+The plan has three main changes:
 
-1. 既存のRandom Walk、Historical Mean、AR(1)に、重回帰モデルを追加する。
-2. 既存のNormal区間をFixed NormalとRolling Normalに分ける。
-3. 「点予測の精度」「区間全体の評価」「Coverageの目標到達」を分け、結果を見た後に評価基準を変更しない。
+1. Add a multiple regression model alongside the existing Random Walk, Historical Mean, and AR(1) models.
+2. Split the existing Normal interval method into Fixed Normal and Rolling Normal.
+3. Evaluate point forecast accuracy, overall interval performance, and attainment of the coverage target separately, without changing the criteria after inspecting the results.
 
-点予測は4モデル、予測区間は4モデル×4区間法の16通りを比較する。Random WalkとHistorical Meanは、複雑なモデルを使う意味があるかを確かめる基準モデルとして残す。
+We will compare 4 point forecast models and 16 prediction interval combinations: 4 models × 4 interval methods. Random Walk and Historical Mean will remain as baselines for assessing whether more complex models add value.
 
-| 点予測モデル | Fixed CP | Rolling CP | Fixed Normal | Rolling Normal |
+| Point forecast model | Fixed CP | Rolling CP | Fixed Normal | Rolling Normal |
 | --- | --- | --- | --- | --- |
-| Random Walk：リターン予測0 | 比較 | 比較 | 比較 | 比較 |
-| Historical Mean：Trainingの平均 | 比較 | 比較 | 比較 | 比較 |
-| AR(1)：切片＋前営業日リターン | 比較 | 比較 | 比較 | 比較 |
-| 重回帰：切片＋4説明変数 | 追加 | 追加 | 追加 | 追加 |
+| Random Walk: forecast return of 0 | Compare | Compare | Compare | Compare |
+| Historical Mean: training mean | Compare | Compare | Compare | Compare |
+| AR(1): intercept + previous trading day's return | Compare | Compare | Compare | Compare |
+| Multiple Regression: intercept + 4 predictors | Add | Add | Add | Add |
 
-## 2. 引き継ぐデータと比較条件
+## 2. Existing Data and Comparison Settings
 
-既存の `market_volatility_comparison_v0_1.zip` 内の研究設計、前処理・モデル・区間・評価コード、保存済み期間集計を確認した。以下は既存ファイルに保存された設定と件数であり、今回再計算した結果ではない。
+We reviewed the research design and the code for preprocessing, modeling, interval construction, and evaluation in the existing `market_volatility_comparison_v0_1.zip` archive. We also checked the previously saved summaries by period. The settings and counts below come from those files and have not been recalculated for this plan.
 
-| 項目 | 設定 |
+| Item | Setting |
 | --- | --- |
-| 生データ | 既存のSP500.csvとVIXCLS.csvを使用。追加取得しない |
-| 目的変数 | S&P 500日次対数リターン：`r_t = 100 × log(P_t / P_(t-1))` |
-| 予測時点 | 前営業日の引け後。当日の引けまでのリターンを予測 |
-| Training | 2017-01-03〜2018-12-31：502日 |
-| Calibration | 2019-01-02〜2019-12-31：252日 |
-| Test | 2020-01-02〜2026-10-28：1,715日 |
-| 目標Coverage | 90%：`alpha = 0.10` |
-| Rolling Window | 252営業日 |
-| 高VIX | 予測日前営業日のVIXが30以上 |
-| 非高VIX | 予測日前営業日のVIXが30未満 |
-| 係数・平均の更新 | Training後に固定。Rollingで更新するのは区間の幅 |
+| Raw data | Use the existing SP500.csv and VIXCLS.csv files; obtain no additional data |
+| Target variable | Daily S&P 500 log return: `r_t = 100 × log(P_t / P_(t-1))` |
+| Forecast timing | After the previous trading day's close, forecast the return through the current day's close |
+| Training | 2017-01-03 to 2018-12-31: 502 days |
+| Calibration | 2019-01-02 to 2019-12-31: 252 days |
+| Test | 2020-01-02 to 2026-10-28: 1,715 days |
+| Target coverage | 90%: `alpha = 0.10` |
+| Rolling window | 252 trading days |
+| High VIX | VIX of at least 30 on the trading day before the forecast date |
+| Lower VIX | VIX below 30 on the trading day before the forecast date |
+| Updates to coefficients and means | Held fixed after training; rolling updates change the interval width |
 
-既存集計ではTestの高VIX日は149日、Trainingの高VIX日は5日、Calibrationでは0日。高VIX日の結果は、日数だけでなく一部の危機への集中にも影響される。重回帰の高VIX時の予測は、Trainingで十分観測されなかった環境への外挿になる可能性がある。
+The existing summaries report 149 high-VIX days in testing, 5 in training, and 0 in calibration. High-VIX results are affected by both the number of observations and their concentration in a few crises. Multiple regression forecasts during high-VIX periods may involve extrapolation to conditions poorly represented in training.
 
-## 3. 重回帰モデルの追加案
+## 3. Proposed Multiple Regression Model
 
-### 3.1 説明変数
+### 3.1 Predictors
 
-同じ2種類の生データから作れる、以下の4変数を主設定の提案とする。
+We propose the following 4 predictors for the primary specification. All can be derived from the same 2 raw data sources.
 
-| 説明変数 | 日付tの予測で使う情報 | 採用する理由 |
+| Predictor | Information used to forecast date t | Rationale |
 | --- | --- | --- |
-| 前営業日リターン | `r_(t-1)` | 既存AR(1)とのつながりを保ち、短期の連続性・反転を表す |
-| 直近5営業日の累積リターン | `r_(t-5) + ... + r_(t-1)` | 1日だけでは表せない、直近の上昇・下落の動きを表す |
-| 直近20営業日の実現ボラティリティ | `r_(t-20), ..., r_(t-1)` の標本標準偏差、ddof=1 | 過去に実現した値動きの大きさを表す |
-| 前営業日のVIX | `VIX_(t-1)` | オプション価格に基づく市場の不確実性の指標を加える |
+| Previous trading day's return | `r_(t-1)` | Maintain a link to the existing AR(1) model and capture short-term persistence or reversal |
+| Cumulative return over the previous 5 trading days | `r_(t-5) + ... + r_(t-1)` | Capture recent upward or downward movements that a single day's return cannot represent |
+| Realized volatility over the previous 20 trading days | Sample standard deviation of `r_(t-20), ..., r_(t-1)`, with ddof=1 | Measure the magnitude of past realized price movements |
+| Previous trading day's VIX | `VIX_(t-1)` | Add an options-based measure of market uncertainty |
 
-予測式は次の形にする。
+The forecast equation will be:
 
 `r_hat_t = beta0 + beta1 × lag1_t + beta2 × return5_t + beta3 × vol20_t + beta4 × vix_lag1_t`
 
-切片を含む通常の最小二乗法（OLS）を使い、既存AR(1)と同様に `numpy.linalg.lstsq` で推定する。新しい機械学習ライブラリや複雑なクラスは必要としない。
+We will use ordinary least squares (OLS) with an intercept, estimated with `numpy.linalg.lstsq` as in the existing AR(1) model. No additional machine learning library or complex class structure is needed.
 
-5日・20日は、およそ1週間・1か月の営業日に対応する、説明しやすい初期設定である。最適な長さだと主張せず、今回のTest結果を見て日数を調整しない。
+The 5-day and 20-day windows are interpretable initial choices corresponding approximately to one trading week and one trading month. We do not claim that these lengths are optimal and will not adjust them based on the current test results.
 
-### 3.2 実装上の条件と解釈
+### 3.2 Implementation Requirements and Interpretation
 
-- 移動集計は生データの時系列上で作り、t−1までの値にそろえてからTraining・Calibration・Testに分ける。
-- 年初のTraining行にも、前年の過去データから説明変数を作る。20日分の準備期間を確認し、欠損行を黙って削除して評価日を変えない。
-- 係数推定はTrainingだけで行い、Calibration・Testで再推定しない。すべてのモデルで同じ評価日を使う。
-- 相関や係数の極端な大きさはTrainingで確認する。ただしTestの成績や係数のp値で変数を選び直さない。
-- 前日リターンと5日累積リターンには情報の重なりがある。VIXと実現ボラティリティにも相関があり得るため、個々の係数を因果効果として解釈しない。
-- VIXと実現ボラティリティは主に値動きの大きさを表す。これらを平均リターンの予測に加えても、精度改善が保証されるわけではない。
-- この重回帰は条件付き平均のモデルであり、ボラティリティを説明変数に加えただけで区間幅が直接変わる設計にはならない。区間幅は各区間法によって決まる。
-- AR(1)との比較は、同じOLSで説明変数を増やす価値を調べる比較となる。モデルの仕組みと利用情報の違いを完全に分離する実験とは解釈しない。
+- Calculate rolling features on the raw time series, align them to use values only through t−1, and then split the data into training, calibration, and test sets.
+- Use historical data from the previous year to construct predictors for the first training rows of the year. Verify that the 20-day lookback is available; do not silently drop missing rows and thereby change the evaluation dates.
+- Estimate coefficients using training data only, without refitting during calibration or testing. Use the same evaluation dates for all models.
+- Inspect training correlations and unusually large coefficients. Do not reselect predictors based on test performance or coefficient p-values.
+- The previous day's return and the five-day cumulative return contain overlapping information. VIX and realized volatility may also be correlated, so individual coefficients should not be interpreted as causal effects.
+- VIX and realized volatility primarily describe the magnitude of price movements. Adding them to a mean return forecast does not guarantee improved accuracy.
+- This multiple regression is a model of the conditional mean. Adding volatility as a predictor does not directly change interval width; each interval method determines the width.
+- The comparison with AR(1) assesses the value of adding predictors within the same OLS framework. It does not fully separate differences in model structure from differences in the information used.
 
-## 4. 予測区間を2×2で整理する
+## 4. A 2×2 Framework for Prediction Intervals
 
-各モデルの符号付き予測誤差を `e_t = r_t - r_hat_t`、CPのスコアを `abs(e_t)` とする。どの区間法でも同じモデルの同じ点予測を中心に使う。
+For each model, define the signed forecast error as `e_t = r_t - r_hat_t` and the CP score as `abs(e_t)`. Every interval method uses the same point forecast from the corresponding model as its center.
 
-| 区間法 | 幅を決める方法 | 参照する誤差 |
+| Interval method | How the width is determined | Error history |
 | --- | --- | --- |
-| Fixed CP | 絶対誤差の有限標本補正付き経験分位点 | 2019年のCalibration全体 |
-| Rolling CP | 絶対誤差の有限標本補正付き経験分位点 | 予測日より前の直近252日 |
-| Fixed Normal | 符号付き誤差の標本標準偏差×約1.645 | 2019年のCalibration全体 |
-| Rolling Normal | 符号付き誤差の標本標準偏差×約1.645 | 予測日より前の直近252日 |
+| Fixed CP | Empirical quantile of absolute errors with a finite-sample correction | The full 2019 calibration period |
+| Rolling CP | Empirical quantile of absolute errors with a finite-sample correction | The most recent 252 days before the forecast date |
+| Fixed Normal | Sample standard deviation of signed errors × approximately 1.645 | The full 2019 calibration period |
+| Rolling Normal | Sample standard deviation of signed errors × approximately 1.645 | The most recent 252 days before the forecast date |
 
-CPは既存の定義を保ち、`k = ceil((n + 1) × (1 - alpha))` 番目の絶対誤差を半幅にする。Normalは既存の定義を引き継ぎ、`r_hat_t ± z_(1-alpha/2) × s` とする。sはddof=1の標本標準偏差である。
+CP retains the existing definition: its half-width is the k-th smallest absolute error, where `k = ceil((n + 1) × (1 - alpha))`. Normal also retains the existing definition, `r_hat_t ± z_(1-alpha/2) × s`, where s is the sample standard deviation with ddof=1.
 
-Normalの中心は点予測のままにし、誤差平均を足す補正は主分析に入れない。固定・移動それぞれの誤差平均も保存し、ゼロ平均近似がどの程度ずれるかを確認する。標本標準偏差は誤差平均を引いて計算する一方、区間中心を補正しないため、系統的な予測の偏りがある場合にはNormalのCoverageに影響する。
+Normal intervals remain centered on the point forecast; adding the mean error to the center is not part of the primary analysis. The mean errors for both fixed and rolling histories will also be saved to assess departures from the zero mean approximation. The sample standard deviation is calculated around the mean error, but the interval center is not adjusted. Systematic forecast bias can therefore affect Normal coverage.
 
-いずれのNormalも「正規近似による予測区間」であり、係数推定の不確実性等を含めた厳密な有限標本の回帰予測区間とは区別する。平均の信頼区間ではないので、標準偏差をsqrt(n)で割らない。
+Both Normal methods produce prediction intervals based on a normal approximation. They are distinct from exact finite-sample regression prediction intervals that account for coefficient estimation uncertainty and related factors. Because these are not confidence intervals for a mean, the standard deviation is not divided by sqrt(n).
 
-Rollingでは当日の幅を過去の誤差だけで計算し、その後に当日の実現誤差を履歴へ追加する。Rolling CPとRolling Normalは同じ日付の誤差を使う。Test初日のFixedとRollingは、それぞれ同じ方式内で半幅が一致する必要がある。
+Rolling methods calculate the current day's width using past errors only, then add the current day's realized error to the history. Rolling CP and Rolling Normal use errors from the same dates. On the first test day, Fixed and Rolling half-widths must match within each construction method.
 
-比較の意味は次のように整理する。
+The comparisons address the following questions:
 
-| 比較 | 検討する点 |
+| Comparison | What it assesses |
 | --- | --- |
-| Fixed CP vs Fixed Normal | 同じ固定履歴に対する経験分位点方式と正規近似方式の違い |
-| Rolling CP vs Rolling Normal | 同じ移動履歴に対する経験分位点方式と正規近似方式の違い |
-| Fixed CP vs Rolling CP | CPにおける履歴更新の効果 |
-| Fixed Normal vs Rolling Normal | 正規近似における履歴更新の効果 |
+| Fixed CP vs Fixed Normal | Empirical quantiles versus a normal approximation using the same fixed history |
+| Rolling CP vs Rolling Normal | Empirical quantiles versus a normal approximation using the same rolling history |
+| Fixed CP vs Rolling CP | The effect of updating the history for CP |
+| Fixed Normal vs Rolling Normal | The effect of updating the history for the normal approximation |
 
-正規近似にはゼロ平均などの仮定も含まれるので、CPとの性能差を誤差分布の正規性だけの効果とは断定しない。
+The normal approximation also includes assumptions such as an approximately zero mean error. Performance differences from CP should therefore not be attributed solely to whether the error distribution is normal.
 
-## 5. 「良い組み合わせ」の評価基準
+## 5. Criteria for Evaluating Combinations
 
-### 5.1 指標の役割を固定する
+### 5.1 Prespecify the Role of Each Metric
 
-| 評価対象 | 主指標・判定 | 補助指標 |
+| Evaluation target | Primary metric or criterion | Secondary metrics |
 | --- | --- | --- |
-| 点予測の精度：4モデル | RMSEが小さいほど良い | MAE。RMSEと順位が異なれば両方を説明 |
-| 区間の総合評価：16通り | 平均Interval Scoreが小さいほど良い | Coverage・平均幅・上下別の外れ率 |
-| 目標への到達 | 経験的Coverageが90%以上か | 90%との差、Coverageの近似的95%信頼区間 |
-| 市場環境への安定性 | 高VIX・非高VIXを別々に判定 | 年別評価、各区分の日数 |
+| Point forecast accuracy: 4 models | Lower RMSE is better | MAE; explain both rankings if they differ |
+| Overall interval performance: 16 combinations | Lower mean interval score is better | Coverage, mean width, and proportions falling below and above the interval |
+| Attainment of the target | Whether empirical coverage is at least 90% | Difference from 90% and an approximate 95% confidence interval for coverage |
+| Stability across market conditions | Evaluate high-VIX and lower-VIX days separately | Annual results and the number of days in each regime |
 
-RMSEを主指標にするのは、大きな予測誤差を重く評価し、平均を予測する各モデルの比較に一つの基準を置くためである。MAEでも同じモデルが優れるとは限らない。
+RMSE is the primary metric because it penalizes large forecast errors more heavily and provides a single criterion for comparing models that forecast the mean. The same model may not perform best under MAE.
 
-Interval Scoreは、幅と区間を外れた距離を同時に評価する既存の指標を使う。[1]
+We will use the established interval score, which evaluates both interval width and the distance of observations outside the interval.[1]
 
 `IS_t = (U_t - L_t) + (2 / alpha) × max(L_t - r_t, 0) + (2 / alpha) × max(r_t - U_t, 0)`
 
-90%区間では `2 / alpha = 20`。例えば幅4で実現値が区間内ならISは4、幅2でも実現値が区間の端から0.3外れればISは8となる。全日または対象市場区分での日次ISの平均を比較する。
+For a 90% interval, `2 / alpha = 20`. For example, an interval of width 4 has an IS of 4 if the realized value lies inside it. An interval of width 2 has an IS of 8 if the realized value lies 0.3 beyond one boundary. We will compare mean daily IS across all days or within the relevant market regime.
 
-恣意的な重みを付けた「MAE＋Coverage＋Width」の合計点は作らない。区間の種類で点予測のMAE・RMSEは変わらないので、点予測の表は4モデルだけを掲載する。
+We will not construct an arbitrarily weighted composite such as "MAE + Coverage + Width." Since point forecast MAE and RMSE do not vary by interval method, the point forecast table will contain only the 4 models.
 
-### 5.2 判定手順
+### 5.2 Assessment Procedure
 
-全体・高VIX・非高VIXについて、次の順に結果を整理する。
+Results for the full test period, high-VIX days, and lower-VIX days will be organized in the following order:
 
-1. 16通りすべてについて平均IS、Coverage、平均幅、上下別外れ率、日数を示す。
-2. 平均ISが最小の候補を「観測期間で区間の総合評価が最も良かった候補」とする。これだけで90%Coverageを満たしたとは扱わない。
-3. 経験的Coverageが90%以上の候補に「点推定で目標到達」と表示する。その候補群の中で平均ISが最小のものを「目標到達候補の中で総合評価が最も良かった候補」とする。
-4. 該当候補が0なら「この区分では、目標を満たした組み合わせなし」とする。最も良かった未達候補も、Coverage不足を明記して説明する。
-5. 高VIXと非高VIXの両方で90%以上なら「両市場区分で点推定の目標到達」と表示できる。ただし将来のCoverage保証とは呼ばない。
-6. 候補間の差が小さく、不確実性が大きい場合は、一意の優位性を断定しない。
+1. Report mean IS, coverage, mean width, the proportions falling below and above the interval, and the number of days for all 16 combinations.
+2. Identify the candidate with the lowest mean IS as the candidate with the best overall interval performance during the observed period. This alone does not imply that it achieved 90% coverage.
+3. Label candidates with empirical coverage of at least 90% as "Target met based on the point estimate." Among those candidates, identify the one with the lowest mean IS as having the best overall interval performance among candidates that met the target.
+4. If there are 0 qualifying candidates, report "No combination met the target in this regime." Also describe the best-performing candidate that fell short, explicitly noting its coverage shortfall.
+5. If a candidate achieves at least 90% coverage in both the high-VIX and lower-VIX regimes, it may be labeled "Target met in both market regimes based on the point estimates." This must not be described as a guarantee of future coverage.
+6. Avoid claiming unique superiority when differences between candidates are small and uncertainty is substantial.
 
-90%は今回の名目水準に合わせた運用上の記述的基準であり、統計的な認証基準ではない。89.9%と90.1%を明確な性能差として強調しない。主分析では事後的に88%等へ基準を緩めない。90%を超える候補に一律の上限は置かず、過度な幅はISと平均幅で評価する。
+The 90% threshold is a practical, descriptive criterion aligned with the nominal level in this study, rather than a statistical certification standard. We will not present 89.9% and 90.1% as clearly different levels of performance or relax the primary threshold retrospectively to a value such as 88%. No blanket upper coverage limit will be imposed on candidates above 90%; excessive width will be assessed through IS and mean width.
 
-平均幅は「狭いほど良い」と単独で順位付けしない。CoverageとISを併記し、必要ならCoverage–Width散布図で関係を示す。同じCoverageでも区間が外れる日の距離や、幅を広げるタイミングによってISが異なる。[1]
+Mean width will not be ranked on the assumption that narrower is always better. Coverage and IS will be reported alongside it, with a coverage–width scatterplot if helpful. Even at the same coverage, IS can differ because of the distance of observations outside the interval and the timing of increases in width.[1]
 
-高VIX日は全体の一部なので、全体の好成績だけで高VIXにも適しているとは結論しない。全体、高VIX、非高VIXを混ぜた追加の合計点は作らない。
+High-VIX days are a subset of the full period, so strong overall performance does not establish suitability for high-VIX conditions. We will not create an additional aggregate score combining the full period, high-VIX days, and lower-VIX days.
 
-## 6. わずかな差を過大評価しないための追加評価
+## 6. Additional Analysis to Avoid Overstating Small Differences
 
-主要な比較についてpaired moving block bootstrapによる近似的95%信頼区間を追加する計画とする。
+We plan to add approximate 95% confidence intervals for the main comparisons using a paired moving block bootstrap.
 
-| 設定 | 計画 |
+| Setting | Plan |
 | --- | --- |
-| 抽出単位 | 全Test時系列の連続営業日ブロック |
-| 主Block長 | 10営業日 |
-| 感度分析 | 5・20営業日 |
-| 反復数 | 各設定5,000回 |
-| seed | 202701。各Block長で独立に初期化し設定を記録 |
-| 手法間の対応 | 同じ抽出日付indexを全モデル・区間法に使用 |
-| 市場区分 | VIX区分も一緒に抽出し、その後に区分別指標を計算 |
-| 再計算 | RMSE・MAE・Coverage・平均幅・平均ISと、事前に定めた比較の差 |
+| Sampling unit | Blocks of consecutive trading days from the full test series |
+| Primary block length | 10 trading days |
+| Sensitivity analysis | 5 and 20 trading days |
+| Replications | 5,000 for each setting |
+| Seed | 202701; initialize separately for each block length and record the settings |
+| Pairing across methods | Use the same sampled date indices for all models and interval methods |
+| Market regimes | Resample VIX regime labels with the observations, then calculate metrics by regime |
+| Recalculation | RMSE, MAE, coverage, mean width, mean IS, and differences for prespecified comparisons |
 
-高VIX日だけを先に抜き出して独立抽出する方法は使わない。抽出ごとに高VIX日数が変わることを認める。対象区分が0日の抽出は指標を未定義として件数を記録し、都合よく無言で引き直さない。
+High-VIX days will not be extracted in advance and sampled independently. The number of high-VIX days is allowed to vary between samples. If a sample contains 0 days in a target regime, its metrics will be treated as undefined and the occurrence recorded; such samples will not be silently redrawn.
 
-主な比較対象は、各区間法における重回帰−AR(1)、および各モデルにおけるFixed CP−Fixed Normal、Rolling CP−Rolling Normal、Rolling CP−Fixed CP、Rolling Normal−Fixed Normalとする。点予測は重回帰−AR(1)を主比較とし、Random Walk・Historical Meanとの成績も示す。
+The main comparisons will be Multiple Regression − AR(1) under each interval method, and Fixed CP − Fixed Normal, Rolling CP − Rolling Normal, Rolling CP − Fixed CP, and Rolling Normal − Fixed Normal for each model. For point forecasts, Multiple Regression − AR(1) will be the primary comparison, with performance relative to Random Walk and Historical Mean also reported.
 
-例えば平均IS差を「候補A−候補B」と置いた場合、負ならAの点推定が良い。近似95%信頼区間が0をまたぐ場合、「差を明確に識別できない」と説明し、同等だと証明したとは言わない。
+For example, if the mean IS difference is defined as "Candidate A − Candidate B," a negative value favors A on the point estimate. If the approximate 95% confidence interval spans 0, we will describe the difference as not clearly distinguishable, rather than as evidence of equivalence.
 
-多数の比較から最小値を選んだ後の単純なペアの信頼区間だけで、「16候補中で一意に最良」と証明することはできない。今回はp値による全候補の順位認定を目的にせず、事前の比較に対する差と不確実性を示す。確証的な最良手法の主張を行うなら、別途、多重比較と選択の影響を扱う設計が必要になる。
+Simple pairwise confidence intervals calculated after selecting the minimum across many comparisons cannot establish that a candidate is uniquely best among the 16 combinations. The aim is to report differences and uncertainty for prespecified comparisons, rather than use p-values to certify a ranking of every candidate. A confirmatory claim about the best method would require a separate design that addresses multiple comparisons and selection effects.
 
-これらは学習済みの予測と区間に条件付けた評価指標の不確実性である。再標本化ごとにモデルを学習し直す実験とは異なり、学習過程全体の不確実性は表さない。金融時系列の非定常性や少数の危機への集中があるため、Block長5・10・20の結果が安定しても厳密な妥当性が証明されたとは扱わない。
+These intervals describe uncertainty in evaluation metrics conditional on the fitted forecasts and intervals. They do not represent uncertainty in the full training process, since models are not refitted within each bootstrap sample. Given nonstationarity in financial time series and the concentration of observations in a few crises, stable results for block lengths of 5, 10, and 20 do not establish strict validity.
 
-## 7. 実装の順序と完了条件
+## 7. Implementation Order and Completion Criteria
 
-分析本体は既存と同じく、読み込み→計算→保存の順に上から追える構成、日本語の短いコメント、少数の短い関数を中心にする。クラス化、広範なtry/except、過度な共通化は加えない。研究上重要な時間順序・欠損・再現性の検証は残し、検証用処理は本体から分ける。
+As in the existing implementation, the main analysis will follow a readable sequence from loading to calculation to saving, using short Japanese comments and a small number of short functions. We will not introduce classes, broad try/except blocks, or excessive abstraction. Checks important to the research, including temporal ordering, missing values, and reproducibility, will be retained, with validation code kept separate from the main analysis.
 
-| 段階 | 作業 | 完了条件 |
+| Stage | Task | Completion criteria |
 | --- | --- | --- |
-| 1 | v0.1と生データを保全し、v0.2用の作業コピーを用意 | 参照用コード・結果・生データの保存とハッシュ記録 |
-| 2 | `settings.py`と`01_prepare_data.py`に4モデル・4区間法と説明変数を追加 | 全変数がt−1まで、既存のTraining・Calibration・Test日付と件数を維持 |
-| 3 | `02_fit_models.py`に重回帰を追加 | Trainingのみで推定、4モデル分の点予測・誤差・係数を保存 |
-| 4 | `intervals.py`と`03_build_intervals.py`にRolling Normalを追加 | 16通りの区間、参照履歴、誤差平均・標準偏差等を保存 |
-| 5 | `04_evaluate.py`に明示した評価基準と判定を追加 | 点予測12行、区間48行の市場別集計と、目標到達・IS順位を保存 |
-| 6 | Bootstrap評価用の短い別スクリプトを追加 | 対応する指標差のCI、Block長感度、実行設定を保存 |
-| 7 | `05_make_figures.py`、研究設計・README・結果説明を更新 | 4×4比較図、Coverage–Width図、主比較の差とCIの図を作成 |
-| 8 | 再現性・時間順序を検証 | 以下の重要チェックに合格し、検証結果を保存 |
+| 1 | Preserve v0.1 and the raw data; prepare a working copy for v0.2 | Save reference code, results, and raw data, and record their hashes |
+| 2 | Add the 4 models, 4 interval methods, and predictors to `settings.py` and `01_prepare_data.py` | All predictors use information only through t−1; existing training, calibration, and test dates and counts are preserved |
+| 3 | Add multiple regression to `02_fit_models.py` | Fit using training data only; save point forecasts, errors, and coefficients for all 4 models |
+| 4 | Add Rolling Normal to `intervals.py` and `03_build_intervals.py` | Save all 16 interval combinations, reference histories, error means and standard deviations, and related information |
+| 5 | Add the explicit evaluation criteria and assessment rules to `04_evaluate.py` | Save summaries by market regime with 12 point forecast rows and 48 interval rows, target attainment, and IS rankings |
+| 6 | Add a short, separate script for bootstrap evaluation | Save CIs for paired metric differences, block-length sensitivity results, and execution settings |
+| 7 | Update `05_make_figures.py`, the research design, README, and results report | Create a 4×4 comparison figure, a coverage–width figure, and figures showing differences and CIs for the main comparisons |
+| 8 | Verify reproducibility and temporal ordering | Pass the key checks below and save the verification results |
 
-重要チェック：
+Key checks:
 
-- 既存3モデル×既存3区間の9通りを再現する。旧NormalはFixed Normalへの名称変更だけであり、計算値を変えない。旧Fixed／RollingもCPと明示する名称に対応付ける。
-- 既存モデルの点予測と日別区間・集計が、保存済みv0.1と数値許容誤差内で一致する。
-- Test初日は、各モデルでFixed CP＝Rolling CP、Fixed Normal＝Rolling Normalの半幅となる。
-- 当日以降の実現誤差を変更しても、その日以前の区間幅が変わらない。
-- Rolling CPとRolling Normalの履歴開始日・終了日・件数が一致する。
-- 1,715日すべてに4モデル×4区間法がそろい、重複・欠損・上下限の逆転がない。
-- 点予測評価で4種類の区間による重複行を数えない。
-- Interval Scoreを、区間内・下側逸脱・上側逸脱の簡単な数値例で確認する。
-- Bootstrapで全手法に同じ日付indexを使い、市場区分別の分母を毎回計算する。
+- Reproduce the 9 existing combinations of 3 models × 3 interval methods. The former Normal method is renamed Fixed Normal without changing its calculated values. The former Fixed and Rolling methods are also mapped to names that explicitly identify them as CP.
+- Confirm that point forecasts, daily intervals, and summaries for the existing models match the saved v0.1 results within numerical tolerance.
+- On the first test day, confirm that the half-widths satisfy Fixed CP = Rolling CP and Fixed Normal = Rolling Normal for each model.
+- Confirm that changing realized errors on or after a given date does not change interval widths on or before that date.
+- Confirm that Rolling CP and Rolling Normal use histories with the same start dates, end dates, and observation counts.
+- Confirm that all 4 models × 4 interval methods are available for every one of the 1,715 days, with no duplicates, missing values, or reversed interval bounds.
+- Ensure that point forecast evaluation does not count duplicate rows arising from the 4 interval methods.
+- Verify the interval score using simple numerical examples with an observation inside the interval, below the lower bound, and above the upper bound.
+- Confirm that the bootstrap uses the same sampled date indices for every method and recalculates regime-specific denominators in every replication.
 
-主な追加出力は、説明変数定義、重回帰係数、16通りの日別区間、4モデルの点予測評価、16通りの区間評価、目標到達状況、Bootstrapの差とCI、図、結果説明、検証記録とする。係数・結果の列構成は必要な範囲だけ拡張する。
+The main additional outputs will be predictor definitions, multiple regression coefficients, daily intervals for the 16 combinations, point forecast evaluations for the 4 models, interval evaluations for the 16 combinations, target attainment, bootstrap differences and CIs, figures, a results report, and verification records. Coefficient and results tables will be extended only as needed.
 
-## 8. 結論の範囲と次の研究
+## 8. Scope of Conclusions and Future Research
 
-今回のTest期間の結果はすでに一部確認されているため、今回の比較は過去データについての記述的・探索的評価として位置付ける。評価ルールを今回先に固定することには意味があるが、既に見た期間を完全に未使用のTestへ戻すことはできない。
+Some results from the current test period have already been inspected, so this comparison is a descriptive and exploratory evaluation of historical data. Prespecifying the evaluation rules now remains useful, but a previously examined period cannot become a completely untouched test set again.
 
-結論は「この対象期間・比較候補・評価基準では、どの組み合わせがどの市場環境で良かったか」とする。将来にも最適、あるいは将来も90%を保証するとは主張しない。
+Conclusions will describe which combinations performed well under which market conditions, within the study period, candidate set, and evaluation criteria. We will not claim future optimality or guaranteed 90% coverage in future periods.
 
-Conformalの通常のCoverage保証には交換可能性等の条件があり、金融時系列やVIX別区分で自動的に成立するものではない。Rollingへの変更だけで条件付きCoverageが保証されるとも扱わない。[2]
+Standard conformal coverage guarantees require conditions such as exchangeability, which do not automatically hold for financial time series or VIX-defined subgroups. Switching to a rolling history alone does not guarantee conditional coverage.[2]
 
-Training・Calibrationの高VIX割合やWindow長を変更するRQ4は、この16通りの基礎比較の完了後に別計画とする。今回の成績だけで1組に絞り、同じTestで期間設定も最適化し、その最小値を未使用データでの性能として報告することは避ける。将来の手法選択を検証する場合は、選択用の時系列Validationと、新たな未確認期間での最終評価を用意する。
+RQ4, which changes the proportion of high-VIX observations in training and calibration and the window length, will be planned separately after the basic comparison of 16 combinations is complete. We will avoid selecting one combination from these results, optimizing the period settings on the same test set, and reporting the resulting minimum as performance on untouched data. To evaluate future method selection, we will use time-ordered validation for selection and a final evaluation on a new, previously unexamined period.
 
-## 参考資料
+## References
 
-[1] Gneiting, T. & Raftery, A. E. (2007). *Strictly Proper Scoring Rules, Prediction, and Estimation*. Journal of the American Statistical Association, 102(477), 359–378. 特にSection 6.2と式(43)：Interval Scoreの定義と評価の考え方。  
+[1] Gneiting, T. & Raftery, A. E. (2007). *Strictly Proper Scoring Rules, Prediction, and Estimation*. Journal of the American Statistical Association, 102(477), 359–378. See especially Section 6.2 and equation (43) for the definition of the interval score and its role in evaluation.\
 https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf
 
-[2] Barber, R. F., Candès, E. J., Ramdas, A. & Tibshirani, R. J. (2023). *Conformal Prediction Beyond Exchangeability*. Annals of Statistics, 51(2), 816–845. 交換可能性と分布変化の下でのCoverageの解釈。  
+[2] Barber, R. F., Candès, E. J., Ramdas, A. & Tibshirani, R. J. (2023). *Conformal Prediction Beyond Exchangeability*. Annals of Statistics, 51(2), 816–845. Discusses the interpretation of coverage under exchangeability and distribution shift.\
 https://www.stat.cmu.edu/~ryantibs/papers/nexcp.pdf
 
-説明変数4種類、5日・20日の集計、90%到達の表示、Bootstrapの設定は本計画の提案であり、上記文献がこの研究に対して最適だと保証する設定ではない。
+The 4 predictors, 5-day and 20-day windows, labels for attainment of the 90% target, and bootstrap settings are proposals in this plan. The cited papers do not establish that these choices are optimal for this study.
